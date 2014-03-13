@@ -6,7 +6,7 @@ function foobar() {
 }
 
 $(document).keydown(function(e) {
-  keys.push( e.keyCode );
+  pressed.push( e.keyCode );
   if ( pressed == keys ) {
     foobar();
     pressed = [];
