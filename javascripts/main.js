@@ -5,11 +5,13 @@ $(document).keydown(function(e) {
   pressed.push(e.keyCode);
   pressed.shift();
   if ( pressed.toString() == keys.toString() ) {
-    $shibe = $('#shibe')
+    var $body = $('body');
+    var $shibe = $('#shibe');
     if ($shibe.length > 0) {
         $shibe.remove();
     } else {
-        $('body').append('<img src="/images/doge.png" id="shibe">');
+        $body.append('<img src="/images/doge.png" id="shibe">');
     }
+    $body.toggleClass('rainbow');
   }
 });
