@@ -8,7 +8,7 @@ function foobar() {
 $(document).keydown(function(e) {
   pressed.push(e.keyCode);
   pressed.shift();
-  if ( pressed == keys ) {
+  if ( pressed.toString() == keys.toString() ) {
     foobar();
   }
 });
