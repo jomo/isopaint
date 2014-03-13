@@ -6,10 +6,13 @@
     100% { transform: rotate(719deg); top: 50%; left: 0% }
 }
 #shibe {
-  animation: 2s linear infinite rot;
+  animation: 7s linear infinite rot;
+  width: 200px;
+  height: 200px:
   left: 50%;
-  margin-left: -24px;
-  margin-top: -24px;
+  margin-left: -100px;
+  margin-top: -100px;
   position: fixed;
   top: 50%;
+  image-rendering: -moz-crisp-edges;
 }
