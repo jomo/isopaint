@@ -79,7 +79,7 @@
 
 #shibe {
   animation: 7s linear infinite rot;
-  -webkig-animation: 7s linear infinite rot;
+  -webkit-animation: 7s linear infinite rot;
   width: 200px;
   height: 200px:
   left: 50%;
