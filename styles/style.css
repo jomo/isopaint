@@ -1,38 +1,39 @@
 @keyframes rot {
   0% {
     transform: rotate(0deg);
-    top: 50%; left: 0%
+    top: 50%;
+    left: 0%;
   }
   25% {
     top: 100%;
-    left: 50%
+    left: 50%;
   }
   50% {
     top: 50%;
-    left: 100%
+    left: 100%;
   }
   75% {
     top: 0%;
-    left: 50%
+    left: 50%;
   }
   100% {
     transform: rotate(719deg);
     top: 50%;
-    left: 0%
+    left: 0%;
   }
 }
 @keyframes rainbow {
   0% {
-    background: #f00
+    background: #f00;
   }
   33% {
-    background: #0f0
+    background: #0f0;
   }
   66% {
-    background: #00f
+    background: #00f;
   }
   100% {
-    background: #f00
+    background: #f00;
   }
 }
 
@@ -40,43 +41,45 @@
 @-webkit-keyframes rot {
   0% {
     transform: rotate(0deg);
-    top: 50%; left: 0%
+    top: 50%;
+    left: 0%;
   }
   25% {
     top: 100%;
-    left: 50%
+    left: 50%;
   }
   50% {
     top: 50%;
-    left: 100%
+    left: 100%;
   }
   75% {
     top: 0%;
-    left: 50%
+    left: 50%;
   }
   100% {
     transform: rotate(719deg);
     top: 50%;
-    left: 0%
+    left: 0%;
   }
 }
 @webkit-keyframes rainbow {
   0% {
-    background: #f00
+    background: #f00;
   }
   33% {
-    background: #0f0
+    background: #0f0;
   }
   66% {
-    background: #00f
+    background: #00f;
   }
   100% {
-    background: #f00
+    background: #f00;
   }
 }
 
 #shibe {
   animation: 7s linear infinite rot;
+  -webkig-animation: 7s linear infinite rot;
   width: 200px;
   height: 200px:
   left: 50%;
@@ -90,4 +93,5 @@
 }
 .rainbow {
   animation: 2s linear infinite rainbow;
+  -webkit-animation: 2s linear infinite rainbow;
 }
