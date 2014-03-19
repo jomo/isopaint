@@ -1,6 +1,7 @@
 var pressed = new Array(10);
 var keys    = [38,38,40,40,37,39,37,39,66,65];
-var song    = new Audio('http://www.televisiontunes.com/themesongs/Jeopardy%20-%20Thinking%20Music.mp3');
+var song    = new Audio('https://archive.org/download/JeopardyTheme/Jeopardy.mp3');
+song.loop   = true;
 song.load();
 
 $(document).keydown(function(e) {
