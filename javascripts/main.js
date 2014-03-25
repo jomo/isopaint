@@ -10,7 +10,7 @@ $(document).keydown(function(e) {
   if ( pressed.toString() == keys.toString() ) {
     $('#shibe').toggleClass('active');
     $('body').toggleClass('rainbow');
-    if (song.paused)
+    if (song.paused) {
         song.play();
     } else {
         song.pause();
