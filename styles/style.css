@@ -78,6 +78,8 @@
 }
 
 #shibe {
+  animation-play-state: paused;
+  -webkit-animation-play-state: paused;
   animation: 7s linear infinite rot;
   -webkit-animation: 7s linear infinite rot;
   width: 200px;
@@ -90,6 +92,12 @@
   image-rendering: crisp-edges;
   image-rendering: -moz-crisp-edges;
   image-rendering: -webkit-optimize-contrast;
+  display: none;
+}
+#shibe.active {
+  animation-play-state: running;
+  -webkit-animation-play-state: running;
+  display: inherit;
 }
 .rainbow {
   animation: 2s linear infinite rainbow;

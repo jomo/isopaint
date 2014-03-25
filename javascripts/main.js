@@ -5,13 +5,7 @@ $(document).keydown(function(e) {
   pressed.push(e.keyCode);
   pressed.shift();
   if ( pressed.toString() == keys.toString() ) {
-    var $body = $('body');
-    var $shibe = $('#shibe');
-    if ($shibe.length > 0) {
-        $shibe.remove();
-    } else {
-        $body.append('<img src="/images/doge.png" id="shibe">');
-    }
-    $body.toggleClass('rainbow');
+    $('#shibe').toggleClass('active');
+    $('body').toggleClass('rainbow');
   }
 });
