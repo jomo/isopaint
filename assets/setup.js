@@ -1,6 +1,11 @@
+var dp = window.devicePixelRatio || 1;
 var canvas = document.querySelector("canvas");
-canvas.width = innerWidth;
-canvas.height = innerHeight;
+(window.updateSize = function() {
+  canvas.width = dp * innerWidth;
+  canvas.height = dp * innerHeight;
+  canvas.style.width = innerWidth + 'px';
+  canvas.style.height = innerHeight + 'px';
+})();
 
 // setup
 var steps = [];
@@ -26,4 +31,12 @@ var y = 0;
 var z = 0;
 
 var ctx = canvas.getContext("2d");
-ctx.font = "15px 'Helvetica Neue', Arial, sans-serif";
+ctx.font = (dp * 15) + "px 'Helvetica Neue', Arial, sans-serif";
+
+window.onresize = function() {
+  updateSize();
+  shiftx = canvas.width / 2;
+  shifty = canvas.height / 2;
+	ctx.font = (dp * 15) + "px 'Helvetica Neue', Arial, sans-serif";
+  render();
+};

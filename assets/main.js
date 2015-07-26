@@ -60,17 +60,17 @@ function printInfo() {
   ctx.setTransform(1, 0, 0, 1, 0, 0);
 
   ctx.fillStyle = "#fff";
-  ctx.fillText("x: " + x + " y: " + y + " z: " + -z, 10, 20);
-  ctx.fillText("painting: " + painting, 10, 35);
-  ctx.fillText("flipped: " + (flip === -1), 10, 50);
-  ctx.fillText("scale: " + scale, 10, 65);
+  ctx.fillText("x: " + x + " y: " + y + " z: " + -z, dp * 10, dp * 20);
+  ctx.fillText("painting: " + painting,              dp * 10, dp * 35);
+  ctx.fillText("flipped: " + (flip === -1),          dp * 10, dp * 50);
+  ctx.fillText("scale: " + scale,                    dp * 10, dp * 65);
 
-  ctx.fillText("(Shift) Arrow Keys → navigate", 10, canvas.height - 85);
-  ctx.fillText("Scroll → Scale", 10, canvas.height - 70);
-  ctx.fillText("Space → toggle painting", 10, canvas.height - 55);
-  ctx.fillText("f → flip view", 10, canvas.height - 40);
-  ctx.fillText("d → delete block", 10, canvas.height - 25);
-  ctx.fillText("r → reset", 10, canvas.height - 10);
+  ctx.fillText("(Shift) Arrow Keys → navigate",      dp * 10, canvas.height - dp * 85);
+  ctx.fillText("Scroll → Scale",                     dp * 10, canvas.height - dp * 70);
+  ctx.fillText("Space → toggle painting",            dp * 10, canvas.height - dp * 55);
+  ctx.fillText("f → flip view",                      dp * 10, canvas.height - dp * 40);
+  ctx.fillText("d → delete block",                   dp * 10, canvas.height - dp * 25);
+  ctx.fillText("r → reset",                          dp * 10, canvas.height - dp * 10);
 }
 
 // deletes the block at current position
@@ -87,29 +87,31 @@ function render() {
   ctx.setTransform(1, 0, 0, 1, 0, 0);
   ctx.clearRect(0, 0, canvas.width, canvas.height);
 
+  var renderScale = dp * scale;
+
   for (var i = 0; i < draw.length; i++) {
     var pos = draw[i];
-    var posx = pos[0] * scale * flip;
-    var posy = pos[1] * scale * flip;
-    var posz = pos[2] * scale;
+    var posx = pos[0] * renderScale * flip;
+    var posy = pos[1] * renderScale * flip;
+    var posz = pos[2] * renderScale;
 
-    var last = x * scale === flip * posx && y * scale === flip * posy && z * scale === posz;
+    var last = x * renderScale === flip * posx && y * renderScale === flip * posy && z * renderScale === posz;
 
     // render top
     // + 0.5 is used to avoid the "problem of adjacent edges" with anti-aliasing
-    ctx.setTransform(1, -skew_a, 1, skew_a, shiftx - scale, shifty - scale / 2 + 0.5);
+    ctx.setTransform(1, -skew_a, 1, skew_a, shiftx - renderScale, shifty - renderScale / 2 + 0.5);
     ctx.fillStyle = last ? "#c22" : "#c44";
-    ctx.fillRect(posy - posz, posx + posz, scale, scale);
+    ctx.fillRect(posy - posz, posx + posz, renderScale, renderScale);
 
     // render left side
-    ctx.setTransform(1, skew_a, 0, skew_b, shiftx - scale, shifty - scale / 2 - 0.5);
+    ctx.setTransform(1, skew_a, 0, skew_b, shiftx - renderScale, shifty - renderScale / 2 - 0.5);
     ctx.fillStyle = last ? "#d22" : (flip === -1 ? "#a44" : "#f44");
-    ctx.fillRect(posx + posy, posz - posy, scale, scale);
+    ctx.fillRect(posx + posy, posz - posy, renderScale, renderScale);
 
     // render right side
-    ctx.setTransform(1, -skew_a, 0, skew_b, shiftx - scale + scale, shifty - scale / 2 + scale * skew_a);
+    ctx.setTransform(1, -skew_a, 0, skew_b, shiftx - renderScale + renderScale, shifty - renderScale / 2 + renderScale * skew_a);
     ctx.fillStyle = last ? "#822" : (flip === -1 ? "#f44" : "#a44");
-    ctx.fillRect(posy + posx, posx + posz, scale, scale);
+    ctx.fillRect(posy + posx, posx + posz, renderScale, renderScale);
   }
 
   printInfo();
