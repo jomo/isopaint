@@ -1,5 +1,5 @@
 document.onwheel = function(event) {
-  var newscale = scale - event.deltaY;
+  var newscale = Math.round(scale - event.deltaY);
   if (newscale < 1) {
     scale = 1;
   } else if (newscale > 150) {
