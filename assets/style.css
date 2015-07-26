@@ -4,6 +4,7 @@ html, body {
   font-size: 0;
   font-family: "Helvetica Neue", Arial, sans-serif;
   background: #49f;
+  overflow: hidden;
 }
 
 a.forkme {
