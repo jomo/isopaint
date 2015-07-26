@@ -51,6 +51,9 @@ document.onkeydown = function(event) {
     case 70:
       flip *= -1;
       break;
+    case 76:
+      location.hash = gethash();
+      break;
     case 82:
       push = false;
       steps = [];
@@ -67,5 +70,4 @@ document.onkeydown = function(event) {
   }
 
   render();
-  location.hash = gethash();
 };

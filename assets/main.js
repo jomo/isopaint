@@ -26,7 +26,6 @@ function parsehash() {
         x = posx;
         y = posy;
         z = posz;
-        console.log([posx, posy, posz]);
       }
     }
 
@@ -65,10 +64,11 @@ function printInfo() {
   ctx.fillText("flipped: " + (flip === -1),          dp * 10, dp * 50);
   ctx.fillText("scale: " + scale,                    dp * 10, dp * 65);
 
-  ctx.fillText("(Shift) Arrow Keys → navigate",      dp * 10, canvas.height - dp * 85);
-  ctx.fillText("Scroll → Scale",                     dp * 10, canvas.height - dp * 70);
-  ctx.fillText("Space → toggle painting",            dp * 10, canvas.height - dp * 55);
-  ctx.fillText("f → flip view",                      dp * 10, canvas.height - dp * 40);
+  ctx.fillText("(Shift) Arrow Keys → navigate",      dp * 10, canvas.height - dp * 100);
+  ctx.fillText("Scroll → Scale",                     dp * 10, canvas.height - dp * 85);
+  ctx.fillText("Space → toggle painting",            dp * 10, canvas.height - dp * 70);
+  ctx.fillText("f → flip view",                      dp * 10, canvas.height - dp * 55);
+  ctx.fillText("l → get link for sharing",           dp * 10, canvas.height - dp * 40);
   ctx.fillText("d → delete block",                   dp * 10, canvas.height - dp * 25);
   ctx.fillText("r → reset",                          dp * 10, canvas.height - dp * 10);
 }
