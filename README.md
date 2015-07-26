@@ -12,7 +12,10 @@ As you can see, you can create [isometric illusions](https://en.wikipedia.org/wi
 
 # Usage
 
-* (Shift +) Arrow Keys: Navigate
-* Space: Toggle painting
-* d: Delete block
-* r: reset canvas
+
+- (Shift) Arrow Keys → navigate
+- Scroll → Scale
+- Space → toggle painting
+- f → flip view
+- d → delete block
+- r → reset
