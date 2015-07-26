@@ -1,24 +1,25 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <meta charset='utf-8' />
+    <title>jomo – Isometric Painting Tool</title>
+    <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="chrome=1" />
-    <title>Many Website</title>
-    <meta name="description" content="Jonapps.github.io : " />
-    <link href="styles/style.css" rel="stylesheet" type="text/css">
-    <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
-    <script src="javascripts/main.js"></script>
+    <meta name="viewport" content="initial-scale=1,maximum-scale=1" />
+    <meta name="description" content="Isometric painting tool on HTML5 canvas" />
+    <link href="favicon.ico" rel="icon">
+    <link href="assets/style.css" rel="stylesheet" type="text/css">
   </head>
   <body>
-    <h1>Wow such website</h1>
-    <img src="images/doge.png" id="shibe">
-    <p>
-      many text<br>
-      such protocol<br>
-      so transfer<br>
-      very hyper<br>
-      how konami<br>
-      wow
-    </p>
+    <a class="forkme" href="https://github.com/jomo/jomo.github.io">Fork me on GitHub</a>
+    <canvas>Please enable JavaScript :)</canvas>
+    <script src="assets/setup.js"></script>
+    <script src="assets/main.js"></script>
+    <script src="assets/control.js"></script>
+    <script>
+      if (location.hash) {
+        steps = parsehash();
+      }
+      render();
+    </script>
   </body>
 </html>

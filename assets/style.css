@@ -1,0 +1,25 @@
+html, body {
+  margin: 0;
+  padding: 0;
+  font-size: 0;
+  font-family: "Helvetica Neue", Arial, sans-serif;
+  background: #49f;
+}
+
+a.forkme {
+  top: 0;
+  right: 0;
+  color: #fff;
+  border: 2px solid #006400;
+  z-index: 10;
+  padding: 3px 40px;
+  display: inline-block;
+  position: fixed;
+  font-size: 14px;
+  background: #008000;
+  box-shadow: 0 0 5px #000;
+  font-weight: bold;
+  text-decoration: none;
+  -webkit-transform: rotate(45deg) translate(65px);
+  transform: rotate(45deg) translate(65px);
+}
