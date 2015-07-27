@@ -17,7 +17,7 @@
     <script src="assets/control.js"></script>
     <script>
       if (location.hash) {
-        steps = parsehash();
+        steps = parsehash() || [];
       }
       render();
     </script>
