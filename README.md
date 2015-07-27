@@ -23,6 +23,5 @@ As you can see, you can create [isometric illusions](https://en.wikipedia.org/wi
 - Scroll → Scale
 - Space → toggle painting
 - f → flip view
-- l → get link for sharing
 - d → delete block
 - r → reset
