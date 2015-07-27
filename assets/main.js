@@ -95,22 +95,37 @@ function render() {
     var posy = pos[1] * renderScale * flip;
     var posz = pos[2] * renderScale;
 
+    var flipped = flip === -1;
+
     var last = x * renderScale === flip * posx && y * renderScale === flip * posy && z * renderScale === posz;
+
+    var colorTop = "#c44";
+    if (last) {
+      colorTop = painting ? "rgba(204, 34, 34, 0.5)" : "rgba(30, 30, 30, 0.5)";
+    }
+    var colorLeft = "#f44";
+    if (last) {
+      colorLeft = painting ? "rgba(221, 34, 34, 0.5)" : "rgba(50, 50, 50, 0.5)";
+    }
+    var colorRight = "#a44";
+    if (last) {
+      colorRight = painting ? "rgba(136, 34, 34, 0.5)" : "rgba(00, 00, 00, 0.5)";
+    }
 
     // render top
     // + 0.5 is used to avoid the "problem of adjacent edges" with anti-aliasing
     ctx.setTransform(1, -skew_a, 1, skew_a, shiftx - renderScale, shifty - renderScale / 2 + 0.5);
-    ctx.fillStyle = last ? "#c22" : "#c44";
+    ctx.fillStyle = colorTop;
     ctx.fillRect(posy - posz, posx + posz, renderScale, renderScale);
 
     // render left side
     ctx.setTransform(1, skew_a, 0, skew_b, shiftx - renderScale, shifty - renderScale / 2 - 0.5);
-    ctx.fillStyle = last ? "#d22" : (flip === -1 ? "#a44" : "#f44");
+    ctx.fillStyle = flipped ? colorRight : colorLeft;
     ctx.fillRect(posx + posy, posz - posy, renderScale, renderScale);
 
     // render right side
     ctx.setTransform(1, -skew_a, 0, skew_b, shiftx - renderScale + renderScale, shifty - renderScale / 2 + renderScale * skew_a);
-    ctx.fillStyle = last ? "#822" : (flip === -1 ? "#f44" : "#a44");
+    ctx.fillStyle = flipped ? colorLeft : colorRight;
     ctx.fillRect(posy + posx, posx + posz, renderScale, renderScale);
   }
 
