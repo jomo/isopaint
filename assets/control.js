@@ -67,5 +67,5 @@ document.onkeydown = function(event) {
   }
 
   render();
-  history.replaceState({}, "", "#" + gethash());
+  history.replaceState({}, document.title, location.protocol + "//" + location.host + location.pathname + "#" + gethash());
 };
