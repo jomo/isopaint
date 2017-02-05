@@ -130,3 +130,8 @@ function render() {
 
   printInfo();
 }
+
+if (location.hash) {
+  steps = parsehash() || [];
+}
+render();
